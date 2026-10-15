@@ -15,7 +15,7 @@ internal class MoviePagingSource(
 
         return try {
             val response = remoteDataSource.getMovies(page = page, query = query)
-            val movies = response.results.map { it.toDomain() }
+            val movies = response.results.distinctBy { it.id }.map { it.toDomain() }
             val lastPage = response.totalPages.coerceAtLeast(page)
 
             LoadResult.Page(

@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemContentType
-import androidx.paging.compose.itemKey
 import com.jquiroga.movieschallenge.features.home.model.MovieUiModel
 
 @Composable
@@ -34,8 +33,10 @@ internal fun MovieGrid(
         ) {
             items(
                 count = movies.itemCount,
-                key = movies.itemKey { movie -> movie.id },
-                contentType = movies.itemContentType { MOVIE_CONTENT_TYPE }
+                key = { index ->
+                    movies.peek(index)?.let { movie -> "${movie.id}_$index" } ?: index
+                },
+                contentType = movies.itemContentType { MOVIE_CONTENT_TYPE },
             ) { index ->
                 movies[index]?.let { movie ->
                     MovieCard(movie = movie)

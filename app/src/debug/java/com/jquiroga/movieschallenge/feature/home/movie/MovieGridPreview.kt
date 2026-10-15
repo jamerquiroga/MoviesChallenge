@@ -15,7 +15,8 @@ private fun MovieGridPreview() {
     MoviesChallengeTheme(dynamicColor = false) {
         MovieGrid(
             movies = MoviePreviewData.movies().collectAsLazyPagingItems(),
-            modifier = Modifier.fillMaxSize(),
+            onMovieClick = {},
+            modifier = Modifier.fillMaxSize()
         )
     }
 }

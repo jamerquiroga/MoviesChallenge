@@ -23,7 +23,8 @@ import com.jquiroga.movieschallenge.features.home.ui.state.MoviesAppendLoadingSt
 @Composable
 internal fun MovieGrid(
     movies: LazyPagingItems<MovieUiModel>,
-    modifier: Modifier = Modifier,
+    onMovieClick: (Long) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier) {
         LazyVerticalGrid(
@@ -41,7 +42,10 @@ internal fun MovieGrid(
                 contentType = movies.itemContentType { MOVIE_CONTENT_TYPE },
             ) { index ->
                 movies[index]?.let { movie ->
-                    MovieCard(movie = movie)
+                    MovieCard(
+                        movie = movie,
+                        onClick = { onMovieClick(movie.id) },
+                    )
                 }
             }
 

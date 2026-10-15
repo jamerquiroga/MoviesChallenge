@@ -10,6 +10,7 @@ import com.jquiroga.movieschallenge.features.home.view.MoviesViewModel
 
 @Composable
 fun MoviesRoute(
+    onMovieClick: (Long) -> Unit,
     viewModel: MoviesViewModel = viewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
@@ -18,6 +19,7 @@ fun MoviesRoute(
     MoviesScreen(
         uiState = uiState,
         movies = pagedMovies,
-        onSearchQueryChanged = viewModel::onSearchQueryChanged
+        onSearchQueryChanged = viewModel::onSearchQueryChanged,
+        onMovieClick = onMovieClick
     )
 }

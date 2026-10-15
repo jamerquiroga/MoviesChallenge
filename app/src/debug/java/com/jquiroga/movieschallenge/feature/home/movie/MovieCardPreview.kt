@@ -20,7 +20,10 @@ private fun MovieCardPreview() {
                 .width(180.dp)
                 .padding(8.dp),
         ) {
-            MovieCard(movie = MoviePreviewData.movie)
+            MovieCard(
+                movie = MoviePreviewData.movie,
+                onClick = {}
+            )
         }
     }
 }

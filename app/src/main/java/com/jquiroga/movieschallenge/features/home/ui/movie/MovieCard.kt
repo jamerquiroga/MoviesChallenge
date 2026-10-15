@@ -29,7 +29,8 @@ import com.jquiroga.movieschallenge.features.home.model.MovieUiModel
 @Composable
 internal fun MovieCard(
     movie: MovieUiModel,
-    modifier: Modifier = Modifier,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val posterPlaceholderColor = MaterialTheme.colorScheme.surfaceVariant
     val posterPlaceholder = remember(posterPlaceholderColor) {
@@ -37,6 +38,7 @@ internal fun MovieCard(
     }
 
     Card(
+        onClick = onClick,
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(

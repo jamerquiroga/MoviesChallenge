@@ -25,7 +25,8 @@ internal fun MoviesScreen(
     uiState: MoviesUiState,
     movies: LazyPagingItems<MovieUiModel>,
     onSearchQueryChanged: (String) -> Unit,
-    modifier: Modifier = Modifier,
+    onMovieClick: (Long) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     var isSearchActive by rememberSaveable {
         mutableStateOf(uiState.searchQuery.isNotBlank())
@@ -77,9 +78,10 @@ internal fun MoviesScreen(
             else -> {
                 MovieGrid(
                     movies = movies,
+                    onMovieClick = onMovieClick,
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(innerPadding)
+                        .padding(innerPadding),
                 )
             }
         }

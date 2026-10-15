@@ -15,4 +15,15 @@
     <string name="empty_search_title">Sin resultados</string>
     <string name="empty_search_message">No encontramos películas para “%1$s”.</string>
     <string name="retry">Reintentar</string>
+    <string name="movie_detail_title">Detalle de película</string>
+    <string name="navigate_back">Volver</string>
+    <string name="loading_movie_detail">Cargando detalle de la película</string>
+    <string name="movie_detail_error_title">No pudimos cargar el detalle</string>
+    <string name="movie_detail_network_error_message">Revisa tu conexión e inténtalo nuevamente.</string>
+    <string name="movie_detail_not_found_message">La película solicitada ya no está disponible.</string>
+    <string name="movie_detail_generic_error_message">Ocurrió un problema inesperado. Inténtalo nuevamente.</string>
+    <string name="movie_backdrop_content_description">Imagen principal de %1$s</string>
+    <string name="movie_runtime">%1$d min</string>
+    <string name="movie_overview_title">Sinopsis</string>
+    <string name="movie_overview_unavailable">No hay una sinopsis disponible.</string>
 </resources>

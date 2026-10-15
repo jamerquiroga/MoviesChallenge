@@ -1,6 +1,8 @@
 package com.jquiroga.movieschallenge.di
 
+import com.jquiroga.movieschallenge.domain.repository.FavoriteRepository
 import com.jquiroga.movieschallenge.domain.repository.MovieRepository
+import com.jquiroga.movieschallenge.domain.usecase.GetFavoriteMoviesUseCase
 import com.jquiroga.movieschallenge.domain.usecase.GetMovieDetailUseCase
 import com.jquiroga.movieschallenge.domain.usecase.GetMoviesUseCase
 import dagger.Module
@@ -20,4 +22,9 @@ object UseCaseModule {
     @Singleton
     fun provideGetMovieDetail(repository: MovieRepository): GetMovieDetailUseCase =
         GetMovieDetailUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideGetFavoriteMovies(repository: FavoriteRepository): GetFavoriteMoviesUseCase =
+        GetFavoriteMoviesUseCase(repository)
 }

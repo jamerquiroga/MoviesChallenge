@@ -2,6 +2,7 @@ package com.jquiroga.movieschallenge.data.datasource.remote.source.implement
 
 import com.jquiroga.movieschallenge.data.core.utils.ApiConfig
 import com.jquiroga.movieschallenge.data.datasource.remote.api.MovieApi
+import com.jquiroga.movieschallenge.data.datasource.remote.dto.MovieDetailDto
 import com.jquiroga.movieschallenge.data.datasource.remote.dto.MoviePageDto
 import com.jquiroga.movieschallenge.data.datasource.remote.source.MovieRemoteDataSource
 import javax.inject.Inject
@@ -23,4 +24,10 @@ class MovieRemoteDataSourceImpl @Inject constructor(
                 page = page,
             )
         }
+
+    override suspend fun getMovieDetail(movieId: Long): MovieDetailDto =
+        api.getMovieDetail(
+            movieId = movieId,
+            language = ApiConfig.DEFAULT_LANGUAGE,
+        )
 }

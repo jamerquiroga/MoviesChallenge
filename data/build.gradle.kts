@@ -3,6 +3,11 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.androidx.room)
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
 }
 
 android {
@@ -35,8 +40,13 @@ dependencies {
     implementation(libs.okhttp.core)
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.kotlinx.serialization)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+
     debugImplementation(libs.okhttp.logging.interceptor)
+
     ksp(libs.hilt.compiler)
+    ksp(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
 

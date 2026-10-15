@@ -1,8 +1,12 @@
 package com.jquiroga.movieschallenge.data.di
 
+import com.jquiroga.movieschallenge.data.datasource.local.source.FavoriteLocalDataSource
+import com.jquiroga.movieschallenge.data.datasource.local.source.implement.FavoriteLocalDataSourceImpl
 import com.jquiroga.movieschallenge.data.datasource.remote.source.MovieRemoteDataSource
 import com.jquiroga.movieschallenge.data.datasource.remote.source.implement.MovieRemoteDataSourceImpl
+import com.jquiroga.movieschallenge.data.repository.FavoriteDataRepository
 import com.jquiroga.movieschallenge.data.repository.MovieDataRepository
+import com.jquiroga.movieschallenge.domain.repository.FavoriteRepository
 import com.jquiroga.movieschallenge.domain.repository.MovieRepository
 import dagger.Binds
 import dagger.Module
@@ -22,5 +26,15 @@ abstract class DataBindsModule {
     abstract fun bindMovieRepository(
         impl: MovieDataRepository
     ): MovieRepository
+
+    @Binds
+    abstract fun bindFavoriteLocalDataSource(
+        impl: FavoriteLocalDataSourceImpl
+    ): FavoriteLocalDataSource
+
+    @Binds
+    abstract fun bindFavoriteRepository(
+        impl: FavoriteDataRepository
+    ): FavoriteRepository
 
 }

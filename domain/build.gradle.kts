@@ -5,3 +5,8 @@ plugins {
 kotlin {
     jvmToolchain(11)
 }
+
+dependencies {
+    api(libs.androidx.paging.common)
+    api(libs.kotlinx.coroutines.core)
+}

@@ -12,7 +12,7 @@ private fun MoviesSearchFieldPreview() {
         MoviesSearchField(
             searchQuery = "Matrix",
             onSearchQueryChanged = {},
-            onClearSearch = {},
+            onClearSearch = {}
         )
     }
 }

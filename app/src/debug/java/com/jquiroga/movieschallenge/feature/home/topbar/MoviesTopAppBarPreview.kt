@@ -16,6 +16,7 @@ private fun MoviesTopAppBarPreview() {
             onSearchQueryChanged = {},
             onClearSearch = {},
             onCloseSearch = {},
+            onFavoritesClick = {}
         )
     }
 }
@@ -31,6 +32,7 @@ private fun MoviesTopAppBarSearchPreview() {
             onSearchQueryChanged = {},
             onClearSearch = {},
             onCloseSearch = {},
+            onFavoritesClick = {}
         )
     }
 }

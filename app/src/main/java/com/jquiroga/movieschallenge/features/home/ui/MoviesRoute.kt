@@ -10,6 +10,7 @@ import com.jquiroga.movieschallenge.features.home.view.MoviesViewModel
 
 @Composable
 fun MoviesRoute(
+    onFavoritesClick: () -> Unit,
     onMovieClick: (Long) -> Unit,
     viewModel: MoviesViewModel = viewModel(),
 ) {
@@ -20,6 +21,7 @@ fun MoviesRoute(
         uiState = uiState,
         movies = pagedMovies,
         onSearchQueryChanged = viewModel::onSearchQueryChanged,
+        onFavoritesClick = onFavoritesClick,
         onMovieClick = onMovieClick
     )
 }

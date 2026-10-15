@@ -26,4 +26,13 @@
     <string name="movie_runtime">%1$d min</string>
     <string name="movie_overview_title">Sinopsis</string>
     <string name="movie_overview_unavailable">No hay una sinopsis disponible.</string>
+    <string name="favorites_title">Favoritos</string>
+    <string name="open_favorites">Abrir favoritos</string>
+    <string name="add_to_favorites">Agregar a favoritos</string>
+    <string name="remove_from_favorites">Quitar de favoritos</string>
+    <string name="favorite_update_error">No se pudo actualizar el favorito. Inténtalo nuevamente.</string>
+    <string name="empty_favorites_title">Aún no tienes favoritos</string>
+    <string name="empty_favorites_message">Marca películas como favoritas para encontrarlas aquí.</string>
+    <string name="favorites_error_title">No pudimos cargar tus favoritos</string>
+    <string name="favorites_error_message">Ocurrió un problema al consultar el almacenamiento local.</string>
 </resources>

@@ -7,6 +7,9 @@ import kotlinx.serialization.Serializable
 internal data object MoviesDestination : NavKey
 
 @Serializable
+internal data object FavoritesDestination : NavKey
+
+@Serializable
 internal data class MovieDetailDestination(
     val movieId: Long,
 ) : NavKey

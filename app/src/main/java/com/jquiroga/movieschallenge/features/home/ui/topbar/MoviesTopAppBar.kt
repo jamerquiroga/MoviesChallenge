@@ -7,6 +7,7 @@ internal fun MoviesTopAppBar(
     searchQuery: String,
     isSearchActive: Boolean,
     onSearchClick: () -> Unit,
+    onFavoritesClick: () -> Unit,
     onSearchQueryChanged: (String) -> Unit,
     onClearSearch: () -> Unit,
     onCloseSearch: () -> Unit,
@@ -19,6 +20,9 @@ internal fun MoviesTopAppBar(
             onCloseSearch = onCloseSearch,
         )
     } else {
-        MoviesCatalogTopAppBar(onSearchClick = onSearchClick)
+        MoviesCatalogTopAppBar(
+            onSearchClick = onSearchClick,
+            onFavoritesClick = onFavoritesClick
+        )
     }
 }

@@ -25,6 +25,7 @@ internal fun MoviesScreen(
     uiState: MoviesUiState,
     movies: LazyPagingItems<MovieUiModel>,
     onSearchQueryChanged: (String) -> Unit,
+    onFavoritesClick: () -> Unit,
     onMovieClick: (Long) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -39,6 +40,7 @@ internal fun MoviesScreen(
                 searchQuery = uiState.searchQuery,
                 isSearchActive = isSearchActive,
                 onSearchClick = { isSearchActive = true },
+                onFavoritesClick = onFavoritesClick,
                 onSearchQueryChanged = onSearchQueryChanged,
                 onClearSearch = { onSearchQueryChanged("") },
                 onCloseSearch = {

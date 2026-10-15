@@ -9,6 +9,9 @@ import com.jquiroga.movieschallenge.features.home.ui.topbar.MoviesCatalogTopAppB
 @Composable
 private fun MoviesCatalogTopAppBarPreview() {
     MoviesChallengeTheme(dynamicColor = false) {
-        MoviesCatalogTopAppBar(onSearchClick = {})
+        MoviesCatalogTopAppBar(
+            onSearchClick = {},
+            onFavoritesClick = {}
+        )
     }
 }

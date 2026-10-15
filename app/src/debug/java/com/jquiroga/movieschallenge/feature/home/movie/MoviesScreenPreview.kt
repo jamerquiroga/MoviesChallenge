@@ -16,7 +16,8 @@ private fun MoviesScreenPreview() {
             uiState = MoviesUiState(),
             movies = MoviePreviewData.movies().collectAsLazyPagingItems(),
             onSearchQueryChanged = {},
-            onMovieClick = {}
+            onMovieClick = {},
+            onFavoritesClick = {}
         )
     }
 }

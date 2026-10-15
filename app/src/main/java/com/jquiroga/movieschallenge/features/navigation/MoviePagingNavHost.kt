@@ -7,6 +7,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.jquiroga.movieschallenge.features.detail.ui.MovieDetailRoute
+import com.jquiroga.movieschallenge.features.favorite.ui.FavoritesRoute
 import com.jquiroga.movieschallenge.features.home.ui.MoviesRoute
 
 @Composable
@@ -24,21 +25,30 @@ internal fun MoviePagingNavHost() {
         onBack = navigateBack,
         entryDecorators = listOf(
             rememberSaveableStateHolderNavEntryDecorator(),
-            rememberViewModelStoreNavEntryDecorator(),
+            rememberViewModelStoreNavEntryDecorator()
         ),
         entryProvider = entryProvider {
             entry<MoviesDestination> {
                 MoviesRoute(
+                    onFavoritesClick = {
+                        backStack.add(FavoritesDestination)
+                    },
                     onMovieClick = { movieId ->
                         backStack.add(MovieDetailDestination(movieId))
                     },
                 )
             }
 
+            entry<FavoritesDestination> {
+                FavoritesRoute(
+                    onBackClick = navigateBack
+                )
+            }
+
             entry<MovieDetailDestination> { destination ->
                 MovieDetailRoute(
                     movieId = destination.movieId,
-                    onBackClick = navigateBack,
+                    onBackClick = navigateBack
                 )
             }
         },

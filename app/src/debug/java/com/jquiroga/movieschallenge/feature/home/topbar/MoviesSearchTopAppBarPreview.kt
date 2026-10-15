@@ -13,7 +13,7 @@ private fun MoviesSearchTopAppBarPreview() {
             searchQuery = "Matrix",
             onSearchQueryChanged = {},
             onClearSearch = {},
-            onCloseSearch = {},
+            onCloseSearch = {}
         )
     }
 }

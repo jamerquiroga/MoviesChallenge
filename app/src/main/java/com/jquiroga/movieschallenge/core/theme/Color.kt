@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.ui.theme
+package com.jquiroga.movieschallenge.core.theme
 
 import androidx.compose.ui.graphics.Color
 

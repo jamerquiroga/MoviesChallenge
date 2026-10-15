@@ -7,7 +7,7 @@ import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
 import androidx.navigation3.ui.NavDisplay
 import com.jquiroga.movieschallenge.features.detail.ui.MovieDetailRoute
-import com.jquiroga.movieschallenge.features.home.route.MoviesRoute
+import com.jquiroga.movieschallenge.features.home.ui.MoviesRoute
 
 @Composable
 internal fun MoviePagingNavHost() {

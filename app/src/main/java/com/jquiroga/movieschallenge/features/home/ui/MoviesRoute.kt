@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.features.home.route
+package com.jquiroga.movieschallenge.features.home.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue

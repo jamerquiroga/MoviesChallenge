@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.features.home.ui
+package com.jquiroga.movieschallenge.features.home.ui.state
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

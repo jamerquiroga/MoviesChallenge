@@ -5,7 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.jquiroga.movieschallenge.features.home.view.MoviesScreen
+import com.jquiroga.movieschallenge.features.home.ui.movie.MoviesScreen
 import com.jquiroga.movieschallenge.features.home.view.MoviesViewModel
 
 @Composable
@@ -18,5 +18,6 @@ fun MoviesRoute(
     MoviesScreen(
         uiState = uiState,
         movies = pagedMovies,
+        onSearchQueryChanged = viewModel::onSearchQueryChanged
     )
 }

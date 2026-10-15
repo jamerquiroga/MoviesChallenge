@@ -1,32 +1,50 @@
-package com.jquiroga.movieschallenge.features.home.view
+package com.jquiroga.movieschallenge.features.home.ui.movie
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import com.jquiroga.movieschallenge.features.home.model.MovieUiModel
 import com.jquiroga.movieschallenge.features.home.model.MoviesUiState
-import com.jquiroga.movieschallenge.features.home.ui.MovieGrid
-import com.jquiroga.movieschallenge.features.home.ui.MoviesEmptyState
-import com.jquiroga.movieschallenge.features.home.ui.MoviesErrorState
-import com.jquiroga.movieschallenge.features.home.ui.MoviesLoadingState
-import com.jquiroga.movieschallenge.features.home.ui.MoviesTopAppBar
+import com.jquiroga.movieschallenge.features.home.ui.state.MoviesEmptyState
+import com.jquiroga.movieschallenge.features.home.ui.state.MoviesErrorState
+import com.jquiroga.movieschallenge.features.home.ui.state.MoviesLoadingState
+import com.jquiroga.movieschallenge.features.home.ui.topbar.MoviesTopAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun MoviesScreen(
     uiState: MoviesUiState,
     movies: LazyPagingItems<MovieUiModel>,
+    onSearchQueryChanged: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    var isSearchActive by rememberSaveable {
+        mutableStateOf(uiState.searchQuery.isNotBlank())
+    }
+
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
-            MoviesTopAppBar(catalog = uiState.catalog)
+            MoviesTopAppBar(
+                searchQuery = uiState.searchQuery,
+                isSearchActive = isSearchActive,
+                onSearchClick = { isSearchActive = true },
+                onSearchQueryChanged = onSearchQueryChanged,
+                onClearSearch = { onSearchQueryChanged("") },
+                onCloseSearch = {
+                    onSearchQueryChanged("")
+                    isSearchActive = false
+                },
+            )
         },
     ) { innerPadding ->
         when (movies.loadState.refresh) {
@@ -49,9 +67,10 @@ internal fun MoviesScreen(
 
             is LoadState.NotLoading if movies.itemCount == 0 -> {
                 MoviesEmptyState(
+                    searchQuery = uiState.searchQuery,
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(innerPadding)
+                        .padding(innerPadding),
                 )
             }
 

@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.features.home.ui
+package com.jquiroga.movieschallenge.features.home.ui.movie
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,6 +17,8 @@ import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemContentType
 import com.jquiroga.movieschallenge.features.home.model.MovieUiModel
+import com.jquiroga.movieschallenge.features.home.ui.state.MoviesAppendErrorState
+import com.jquiroga.movieschallenge.features.home.ui.state.MoviesAppendLoadingState
 
 @Composable
 internal fun MovieGrid(

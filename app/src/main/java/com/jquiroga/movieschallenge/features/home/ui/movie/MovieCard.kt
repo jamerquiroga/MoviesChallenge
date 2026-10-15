@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.features.home.ui
+package com.jquiroga.movieschallenge.features.home.ui.movie
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

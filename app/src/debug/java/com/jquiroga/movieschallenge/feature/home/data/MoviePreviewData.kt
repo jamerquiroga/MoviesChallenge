@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.feature.movies.data
+package com.jquiroga.movieschallenge.feature.home.data
 
 import androidx.paging.PagingData
 import com.jquiroga.movieschallenge.features.home.model.MovieUiModel

@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.features.home.ui
+package com.jquiroga.movieschallenge.features.home.ui.state
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

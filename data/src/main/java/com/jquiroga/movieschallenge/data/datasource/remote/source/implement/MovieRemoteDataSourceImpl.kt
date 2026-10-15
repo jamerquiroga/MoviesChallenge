@@ -11,8 +11,16 @@ class MovieRemoteDataSourceImpl @Inject constructor(
 ) : MovieRemoteDataSource {
 
     override suspend fun getMovies(page: Int, query: String): MoviePageDto =
-        api.getPopularMovies(
-            language = ApiConfig.DEFAULT_LANGUAGE,
-            page = page,
-        )
+        if (query.isBlank()) {
+            api.getPopularMovies(
+                language = ApiConfig.DEFAULT_LANGUAGE,
+                page = page,
+            )
+        } else {
+            api.searchMovies(
+                query = query,
+                language = ApiConfig.DEFAULT_LANGUAGE,
+                page = page,
+            )
+        }
 }

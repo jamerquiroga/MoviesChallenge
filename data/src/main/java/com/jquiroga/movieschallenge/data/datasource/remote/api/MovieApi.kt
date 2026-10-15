@@ -12,4 +12,13 @@ interface MovieApi {
         @Query("language") language: String,
         @Query("page") page: Int
     ): MoviePageDto
+
+    @GET("search/movie")
+    suspend fun searchMovies(
+        @Query("query") query: String,
+        @Query("include_adult") includeAdult: Boolean = false,
+        @Query("language") language: String,
+        @Query("page") page: Int,
+    ): MoviePageDto
+
 }

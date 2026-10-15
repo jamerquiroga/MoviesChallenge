@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">MoviesChallenge</string>
     <string name="popular_movies_title">Películas populares</string>
+    <string name="search_movies">Buscar películas</string>
+    <string name="search_movies_placeholder">Buscar</string>
+    <string name="clear_search">Limpiar búsqueda</string>
+    <string name="close_search">Cerrar búsqueda</string>
     <string name="movie_poster_content_description">Póster de %1$s</string>
     <string name="movie_rating">★ %1$.1f</string>
     <string name="movies_error_title">No pudimos cargar las películas</string>
@@ -8,5 +12,7 @@
     <string name="append_error_message">No se pudo cargar la siguiente página.</string>
     <string name="empty_catalog_title">No hay películas disponibles</string>
     <string name="empty_catalog_message">Intenta actualizar el catálogo más tarde.</string>
+    <string name="empty_search_title">Sin resultados</string>
+    <string name="empty_search_message">No encontramos películas para “%1$s”.</string>
     <string name="retry">Reintentar</string>
 </resources>

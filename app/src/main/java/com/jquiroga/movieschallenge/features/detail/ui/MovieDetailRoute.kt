@@ -20,6 +20,7 @@ internal fun MovieDetailRoute(
     MovieDetailScreen(
         uiState = uiState,
         onBackClick = onBackClick,
-        onRetryClick = viewModel::retry
+        onRetryClick = viewModel::retry,
+        onFavoriteClick = viewModel::onFavoriteClick
     )
 }

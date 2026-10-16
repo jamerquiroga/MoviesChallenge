@@ -27,7 +27,8 @@ import com.jquiroga.movieschallenge.features.detail.model.MovieDetailUiModel
 @Composable
 internal fun MovieDetailContent(
     movie: MovieDetailUiModel,
-    modifier: Modifier = Modifier,
+    favoriteUpdateFailed: Boolean,
+    modifier: Modifier = Modifier
 ) {
     val imagePlaceholderColor = MaterialTheme.colorScheme.surfaceVariant
     val imagePlaceholder = remember(imagePlaceholderColor) {
@@ -74,6 +75,14 @@ internal fun MovieDetailContent(
                 }
 
                 MovieDetailMetadata(movie = movie)
+
+                if (favoriteUpdateFailed) {
+                    Text(
+                        text = stringResource(R.string.favorite_update_error),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.error,
+                    )
+                }
 
                 HorizontalDivider()
 

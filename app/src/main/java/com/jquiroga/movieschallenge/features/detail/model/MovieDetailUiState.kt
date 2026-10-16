@@ -5,6 +5,9 @@ sealed interface MovieDetailUiState {
 
     data class Content(
         val movie: MovieDetailUiModel,
+        val isFavorite: Boolean,
+        val isFavoriteUpdating: Boolean = false,
+        val favoriteUpdateFailed: Boolean = false
     ) : MovieDetailUiState
 
     data class Error(

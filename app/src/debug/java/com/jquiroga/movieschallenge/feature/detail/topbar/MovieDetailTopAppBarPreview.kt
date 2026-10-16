@@ -9,6 +9,11 @@ import com.jquiroga.movieschallenge.features.detail.ui.topbar.MovieDetailTopAppB
 @Composable
 private fun MovieDetailTopAppBarPreview() {
     MoviesChallengeTheme(dynamicColor = false) {
-        MovieDetailTopAppBar(onBackClick = {})
+        MovieDetailTopAppBar(
+            isFavorite = true,
+            isFavoriteUpdating = false,
+            onFavoriteClick = {},
+            onBackClick = {}
+        )
     }
 }

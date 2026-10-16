@@ -10,6 +10,9 @@ import com.jquiroga.movieschallenge.features.detail.ui.movie.MovieDetailContent
 @Composable
 private fun MovieDetailContentPreview() {
     MoviesChallengeTheme(dynamicColor = false) {
-        MovieDetailContent(movie = MovieDetailPreviewData.movie)
+        MovieDetailContent(
+            movie = MovieDetailPreviewData.movie,
+            favoriteUpdateFailed = true
+        )
     }
 }

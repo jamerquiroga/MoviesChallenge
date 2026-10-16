@@ -15,12 +15,19 @@ internal fun MovieDetailScreen(
     uiState: MovieDetailUiState,
     onBackClick: () -> Unit,
     onRetryClick: () -> Unit,
-    modifier: Modifier = Modifier,
+    onFavoriteClick: () -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
-            MovieDetailTopAppBar(onBackClick = onBackClick)
+            val content = uiState as? MovieDetailUiState.Content
+            MovieDetailTopAppBar(
+                isFavorite = content?.isFavorite,
+                isFavoriteUpdating = content?.isFavoriteUpdating == true,
+                onBackClick = onBackClick,
+                onFavoriteClick = onFavoriteClick
+            )
         },
     ) { innerPadding ->
         when (uiState) {
@@ -32,6 +39,7 @@ internal fun MovieDetailScreen(
 
             is MovieDetailUiState.Content -> MovieDetailContent(
                 movie = uiState.movie,
+                favoriteUpdateFailed = uiState.favoriteUpdateFailed,
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding)

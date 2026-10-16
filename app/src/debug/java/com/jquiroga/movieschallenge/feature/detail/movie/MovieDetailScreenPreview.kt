@@ -12,9 +12,13 @@ import com.jquiroga.movieschallenge.features.detail.ui.movie.MovieDetailScreen
 private fun MovieDetailScreenPreview() {
     MoviesChallengeTheme(dynamicColor = false) {
         MovieDetailScreen(
-            uiState = MovieDetailUiState.Content(MovieDetailPreviewData.movie),
+            uiState = MovieDetailUiState.Content(
+                movie = MovieDetailPreviewData.movie,
+                isFavorite = true
+            ),
             onBackClick = {},
-            onRetryClick = {}
+            onRetryClick = {},
+            onFavoriteClick = {}
         )
     }
 }

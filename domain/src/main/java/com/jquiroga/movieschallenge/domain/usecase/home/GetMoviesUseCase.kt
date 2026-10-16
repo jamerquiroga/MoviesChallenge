@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.domain.usecase
+package com.jquiroga.movieschallenge.domain.usecase.home
 
 import androidx.paging.PagingData
 import com.jquiroga.movieschallenge.domain.model.Movie

@@ -3,7 +3,7 @@ package com.jquiroga.movieschallenge.features.favorite.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jquiroga.movieschallenge.domain.result.DomainResult
-import com.jquiroga.movieschallenge.domain.usecase.GetFavoriteMoviesUseCase
+import com.jquiroga.movieschallenge.domain.usecase.favorite.GetFavoriteMoviesUseCase
 import com.jquiroga.movieschallenge.features.favorite.mapper.toFavoriteUiModel
 import com.jquiroga.movieschallenge.features.favorite.model.FavoritesUiState
 import dagger.hilt.android.lifecycle.HiltViewModel

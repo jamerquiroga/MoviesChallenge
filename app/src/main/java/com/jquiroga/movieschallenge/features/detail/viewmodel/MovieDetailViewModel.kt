@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jquiroga.movieschallenge.domain.model.Movie
 import com.jquiroga.movieschallenge.domain.result.DomainResult
-import com.jquiroga.movieschallenge.domain.usecase.GetMovieDetailUseCase
+import com.jquiroga.movieschallenge.domain.usecase.detail.GetMovieDetailUseCase
 import com.jquiroga.movieschallenge.domain.usecase.favorite.AddFavoriteUseCase
 import com.jquiroga.movieschallenge.domain.usecase.favorite.ObserveFavoriteStatusUseCase
 import com.jquiroga.movieschallenge.domain.usecase.favorite.RemoveFavoriteUseCase

@@ -2,9 +2,9 @@ package com.jquiroga.movieschallenge.di
 
 import com.jquiroga.movieschallenge.domain.repository.FavoriteRepository
 import com.jquiroga.movieschallenge.domain.repository.MovieRepository
-import com.jquiroga.movieschallenge.domain.usecase.GetFavoriteMoviesUseCase
-import com.jquiroga.movieschallenge.domain.usecase.GetMovieDetailUseCase
-import com.jquiroga.movieschallenge.domain.usecase.GetMoviesUseCase
+import com.jquiroga.movieschallenge.domain.usecase.favorite.GetFavoriteMoviesUseCase
+import com.jquiroga.movieschallenge.domain.usecase.detail.GetMovieDetailUseCase
+import com.jquiroga.movieschallenge.domain.usecase.home.GetMoviesUseCase
 import com.jquiroga.movieschallenge.domain.usecase.favorite.AddFavoriteUseCase
 import com.jquiroga.movieschallenge.domain.usecase.favorite.ObserveFavoriteStatusUseCase
 import com.jquiroga.movieschallenge.domain.usecase.favorite.RemoveFavoriteUseCase

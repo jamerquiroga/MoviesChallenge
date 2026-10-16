@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.domain.usecase
+package com.jquiroga.movieschallenge.domain.usecase.favorite
 
 import com.jquiroga.movieschallenge.domain.model.Movie
 import com.jquiroga.movieschallenge.domain.repository.FavoriteRepository

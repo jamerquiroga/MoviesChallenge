@@ -9,4 +9,8 @@ kotlin {
 dependencies {
     api(libs.androidx.paging.common)
     api(libs.kotlinx.coroutines.core)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
 }

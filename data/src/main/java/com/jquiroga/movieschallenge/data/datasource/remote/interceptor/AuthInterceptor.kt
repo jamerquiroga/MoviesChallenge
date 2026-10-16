@@ -1,4 +1,4 @@
-package com.jquiroga.movieschallenge.data.core.interceptor
+package com.jquiroga.movieschallenge.data.datasource.remote.interceptor
 
 import com.jquiroga.movieschallenge.data.core.utils.ApiConfig
 import okhttp3.Interceptor

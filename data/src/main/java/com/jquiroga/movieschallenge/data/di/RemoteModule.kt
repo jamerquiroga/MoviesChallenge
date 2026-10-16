@@ -7,7 +7,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Singleton
 import com.jquiroga.movieschallenge.data.BuildConfig
-import com.jquiroga.movieschallenge.data.core.interceptor.AuthInterceptor
+import com.jquiroga.movieschallenge.data.datasource.remote.interceptor.AuthInterceptor
 import com.jquiroga.movieschallenge.data.core.utils.ApiConfig
 import com.jquiroga.movieschallenge.data.datasource.remote.api.MovieApi
 import kotlinx.serialization.json.Json

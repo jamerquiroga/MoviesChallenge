@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.roborazzi)
 }
 
 android {
@@ -44,6 +45,10 @@ android {
     }
 }
 
+roborazzi {
+    outputDir.set(file("src/test/screenshots"))
+}
+
 dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
@@ -75,6 +80,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockk)
     testImplementation(libs.robolectric)
+    testImplementation(libs.roborazzi.compose)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     androidTestImplementation(libs.androidx.espresso.core)

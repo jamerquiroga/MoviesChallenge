@@ -13,3 +13,15 @@ internal fun FavoriteMovieEntity.toDomain() = Movie(
     voteAverage = voteAverage,
     voteCount = voteCount
 )
+
+internal fun Movie.toEntity(savedAtEpochMillis: Long) = FavoriteMovieEntity(
+    id = id,
+    title = title,
+    overview = overview,
+    posterUrl = posterUrl,
+    backdropUrl = backdropUrl,
+    releaseDate = releaseDate,
+    voteAverage = voteAverage,
+    voteCount = voteCount,
+    savedAtEpochMillis = savedAtEpochMillis
+)

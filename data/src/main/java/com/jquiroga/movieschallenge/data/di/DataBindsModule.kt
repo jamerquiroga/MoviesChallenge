@@ -1,5 +1,7 @@
 package com.jquiroga.movieschallenge.data.di
 
+import com.jquiroga.movieschallenge.data.core.utils.time.SystemTimeProvider
+import com.jquiroga.movieschallenge.data.core.utils.time.TimeProvider
 import com.jquiroga.movieschallenge.data.datasource.local.source.FavoriteLocalDataSource
 import com.jquiroga.movieschallenge.data.datasource.local.source.implement.FavoriteLocalDataSourceImpl
 import com.jquiroga.movieschallenge.data.datasource.remote.source.MovieRemoteDataSource
@@ -36,5 +38,10 @@ abstract class DataBindsModule {
     abstract fun bindFavoriteRepository(
         impl: FavoriteDataRepository
     ): FavoriteRepository
+
+    @Binds
+    abstract fun bindTimeProvider(
+        impl: SystemTimeProvider
+    ): TimeProvider
 
 }

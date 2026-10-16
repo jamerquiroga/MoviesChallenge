@@ -5,6 +5,9 @@ import com.jquiroga.movieschallenge.domain.repository.MovieRepository
 import com.jquiroga.movieschallenge.domain.usecase.GetFavoriteMoviesUseCase
 import com.jquiroga.movieschallenge.domain.usecase.GetMovieDetailUseCase
 import com.jquiroga.movieschallenge.domain.usecase.GetMoviesUseCase
+import com.jquiroga.movieschallenge.domain.usecase.favorite.AddFavoriteUseCase
+import com.jquiroga.movieschallenge.domain.usecase.favorite.ObserveFavoriteStatusUseCase
+import com.jquiroga.movieschallenge.domain.usecase.favorite.RemoveFavoriteUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,4 +30,19 @@ object UseCaseModule {
     @Singleton
     fun provideGetFavoriteMovies(repository: FavoriteRepository): GetFavoriteMoviesUseCase =
         GetFavoriteMoviesUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideObserveFavoriteStatus(repository: FavoriteRepository): ObserveFavoriteStatusUseCase =
+        ObserveFavoriteStatusUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideAddFavorite(repository: FavoriteRepository): AddFavoriteUseCase =
+        AddFavoriteUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideRemoveFavorite(repository: FavoriteRepository): RemoveFavoriteUseCase =
+        RemoveFavoriteUseCase(repository)
 }

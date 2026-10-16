@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.jquiroga.movieschallenge.common.ui.movie.MovieCard
 import com.jquiroga.movieschallenge.features.favorite.model.FavoriteMovieUiModel
 
 @Composable
@@ -28,7 +29,12 @@ internal fun FavoritesGrid(
             key = { movie -> movie.id },
             contentType = { FAVORITE_MOVIE_CONTENT_TYPE },
         ) { movie ->
-            FavoriteMovieCard(movie = movie)
+            MovieCard(
+                title = movie.title,
+                posterUrl = movie.posterUrl,
+                releaseYear = movie.releaseYear,
+                voteAverage = movie.voteAverage,
+            )
         }
     }
 }

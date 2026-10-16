@@ -7,9 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.jquiroga.movieschallenge.feature.home.data.MoviePreviewData
-import com.jquiroga.movieschallenge.features.home.ui.movie.MovieCard
+import com.jquiroga.movieschallenge.common.ui.movie.MovieCard
 import com.jquiroga.movieschallenge.core.theme.MoviesChallengeTheme
+import com.jquiroga.movieschallenge.feature.home.data.MoviePreviewData
 
 @Preview(showBackground = true)
 @Composable
@@ -21,8 +21,11 @@ private fun MovieCardPreview() {
                 .padding(8.dp),
         ) {
             MovieCard(
-                movie = MoviePreviewData.movie,
-                onClick = {}
+                title = MoviePreviewData.movie.title,
+                posterUrl = MoviePreviewData.movie.posterUrl,
+                releaseYear = MoviePreviewData.movie.releaseYear,
+                voteAverage = MoviePreviewData.movie.voteAverage,
+                onClick = {},
             )
         }
     }

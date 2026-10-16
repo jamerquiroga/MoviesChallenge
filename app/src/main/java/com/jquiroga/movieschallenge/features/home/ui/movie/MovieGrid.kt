@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemContentType
+import com.jquiroga.movieschallenge.common.ui.movie.MovieCard
 import com.jquiroga.movieschallenge.features.home.model.MovieUiModel
 import com.jquiroga.movieschallenge.features.home.ui.state.MoviesAppendErrorState
 import com.jquiroga.movieschallenge.features.home.ui.state.MoviesAppendLoadingState
@@ -43,7 +44,10 @@ internal fun MovieGrid(
             ) { index ->
                 movies[index]?.let { movie ->
                     MovieCard(
-                        movie = movie,
+                        title = movie.title,
+                        posterUrl = movie.posterUrl,
+                        releaseYear = movie.releaseYear,
+                        voteAverage = movie.voteAverage,
                         onClick = { onMovieClick(movie.id) },
                     )
                 }
